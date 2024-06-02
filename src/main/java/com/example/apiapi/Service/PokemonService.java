@@ -2,6 +2,9 @@ package com.example.apiapi.Service;
 
 import com.example.apiapi.model.Pokemon;
 import com.example.apiapi.model.PokemonRepository;
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,5 +29,8 @@ public class PokemonService {
             }
         }
         return pokemon;
+    }
+    public List<Pokemon> getAllPokemon() {
+        return pokemonRepository.findAll();
     }
 }

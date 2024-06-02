@@ -2,6 +2,9 @@ package com.example.apiapi.Controller;
 
 import com.example.apiapi.model.Pokemon;
 import com.example.apiapi.Service.PokemonService;
+
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,5 +21,9 @@ public class PokemonController {
     @GetMapping("/pokemon/{name}")
     public Pokemon getPokemon(@PathVariable String name) {
         return pokemonService.getPokemonData(name);
+    }
+    @GetMapping("/pokemon")
+    public List<Pokemon> getAllPokemon() {
+        return pokemonService.getAllPokemon();
     }
 }
